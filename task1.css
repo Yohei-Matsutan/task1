@@ -3,19 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-/* 
-・position:absolute+top(left): npxを使用する場合は、その親要素にposition:static以外
-(通常はrelative)を指定しないと<body>を基準にしてしまう
 
-absoluteにしても、topやleftを指定しないと、
-親要素(がrelativeであるかどうかに関わらず)を基準としてしまう
-でもpaddingの影響は受けるので使いにくい
-
-僕はstep-Noをabsoluteにしたけど、topやleftを指定しなかったので、
-親がrelativeじゃないのにそれを基準として配置できた。
-→親要素のpaddingを0にして、その他の要素のmarginで調節するという
-クソめんどくさい方法になってしまった
-*/
 .header-band{
 	height: 50px;
 	margin-top: auto;
@@ -77,4 +65,23 @@ absoluteにしても、topやleftを指定しないと、
 	height: 50px;
 	margin-bottom: auto;
 	background-color: #AAAAAA;
+}
+
+@media screen and (max-width:768px){
+	.steps{
+		width: 100%;
+		display: block;
+	}
+
+	.step{
+		width: 90%;
+		margin: 0 auto 20px;
+	}
+
+	.step:nth-child(1),
+	.step:nth-child(2){
+		margin-right: auto;
+	}
+
+	
 }
