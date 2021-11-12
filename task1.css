@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* 
+・position:absolute+top(left): npxを使用する場合は、その親要素にposition:static以外
+(通常はrelative)を指定しないと<body>を基準にしてしまう
+
+absoluteにしても、topやleftを指定しないと、
+親要素(がrelativeであるかどうかに関わらず)を基準としてしまう
+でもpaddingの影響は受けるので使いにくい
+
+僕はstep-Noをabsoluteにしたけど、topやleftを指定しなかったので、
+親がrelativeじゃないのにそれを基準として配置できた。
+→親要素のpaddingを0にして、その他の要素のmarginで調節するという
+クソめんどくさい方法になってしまった
+*/
+.header-band{
+	height: 50px;
+	margin-top: auto;
+	background-color: #ff9a4b;
+}
+
+.steps{
+	padding: 50px 0 50px 0;
+	display: flex;
+	justify-content: center;
+}
+
+.step{
+	width: 300px;
+	background-color: #EEEEEE;
+}
+
+.step-No{
+	color: white;
+	background-color: #ff9a4b;
+	position: absolute;
+}
+
+.step:nth-child(1),
+.step:nth-child(2){
+	margin-right: 30px;
+}
+
+.step1-img{
+	height: 150px;
+	margin: 10px;
+	background-image: url(img/flow01.png);
+	background-size: cover;
+	background-position: bottom;
+}
+
+.step2-img{
+	height: 150px;
+	margin: 10px;
+	background-image: url(img/flow02.png);
+	background-size: cover;
+	background-position: bottom;
+}
+
+.step3-img{
+	height: 150px;
+	margin: 10px;
+	background-image: url(img/flow03.png);
+	background-size: cover;
+	background-position: bottom;
+}
+
+.title{
+	margin: 5px 10px;
+}
+
+.text{
+	margin: 0 10px 10px 10px;
+}
+
+.fotter-band{
+	height: 50px;
+	margin-bottom: auto;
+	background-color: #AAAAAA;
+}
